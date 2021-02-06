@@ -1,6 +1,8 @@
+import math
+
 import pytest
 
-from .task import task1
+from .task import DisjointSet, task1
 
 
 class Case:
@@ -29,6 +31,41 @@ TEST_CASES = [
         k=4,
         m=2,
         answer=2,
+    ),
+    Case(
+        name='base3',
+        n=6,
+        k=6,
+        m=4,
+        answer=64,
+    ),
+    Case(
+        name='base4',
+        n=7,
+        k=7,
+        m=3,
+        answer=81,
+    ),
+    Case(
+        name='base5',
+        n=5,
+        k=6,
+        m=3,
+        answer=0,
+    ),
+    Case(
+        name='base6',
+        n=10,
+        k=4,
+        m=3,
+        answer=3,
+    ),
+    Case(
+        name='base7',
+        n=10,
+        k=3,
+        m=5,
+        answer=25,
     ),
 ]
 
