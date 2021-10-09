@@ -1,4 +1,4 @@
-def task2(pandas: list) -> list:
+def task2(childs: list) -> list:
     """
     Parameters:
     :pandas (list): panda heights list

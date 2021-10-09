@@ -4,9 +4,9 @@ from .task import task2
 
 
 class Case:
-    def __init__(self, name: str, pandas: list, powers: list):
+    def __init__(self, name: str, childs: list, powers: list):
         self._name = name
-        self.pandas = pandas
+        self.childs = childs
         self.powers = powers
 
     def __str__(self) -> str:
@@ -16,37 +16,37 @@ class Case:
 TEST_CASES = [
     Case(
         name='base1',
-        pandas=[1, 2, 3, 4, 5, 4, 3, 2, 1, 6],
+        childs=[1, 2, 3, 4, 5, 4, 3, 2, 1, 6],
         powers=[6, 4, 4, 3, 3, 2, 2, 1, 1, 1],
     ),
     Case(
         name='base2',
-        pandas=[1, 2, 3],
+        childs=[1, 2, 3],
         powers=[3, 2, 1],
     ),
     Case(
         name='base3',
-        pandas=[7, 9, 13, 6],
+        childs=[7, 9, 13, 6],
         powers=[13, 9, 7, 6],
     ),
     Case(
         name='base4',
-        pandas=[1, 3, 5, 2, 4],
+        childs=[1, 3, 5, 2, 4],
         powers=[5, 3, 2, 2, 1]
     ),
     Case(
         name='base5',
-        pandas=[3, 2, 8, 4, 5, 4, 3, 5, 1, 1, 9],
+        childs=[3, 2, 8, 4, 5, 4, 3, 5, 1, 1, 9],
         powers=[9, 4, 4, 4, 3, 3, 2, 2, 1, 1, 1],
     ),
     Case(
         name='base6',
-        pandas=[5],
+        childs=[5],
         powers=[5]
     ),
     Case(
         name='base7',
-        pandas=[3, 2, 8, 4, 5, 4, 7, 9, 13, 6, 3, 5, 1, 1, 9, 1, 2, 3, 4, 5, 4, 3, 2, 1, 6, 20],
+        childs=[3, 2, 8, 4, 5, 4, 7, 9, 13, 6, 3, 5, 1, 1, 9, 1, 2, 3, 4, 5, 4, 3, 2, 1, 6, 20],
         powers=[20, 9, 7, 6, 4, 4, 4, 4, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     )
 ]
@@ -54,5 +54,5 @@ TEST_CASES = [
 
 @pytest.mark.parametrize('case', TEST_CASES, ids=str)
 def test_task2(case: Case) -> None:
-    answer = task2(pandas=case.pandas)
+    answer = task2(childs=case.childs)
     assert answer == case.powers
