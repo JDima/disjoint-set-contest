@@ -4,9 +4,9 @@ from .task import task4
 
 
 class Case:
-    def __init__(self, name: str, lamps: list, groups: list, answers: list):
+    def __init__(self, name: str, switches: list, groups: list, answers: list):
         self._name = name
-        self.lamps = lamps
+        self.switches = switches
         self.groups = groups
         self.answers = answers
 
@@ -17,7 +17,7 @@ class Case:
 TEST_CASES = [
     Case(
         name='base1',
-        lamps=[0, 0, 1, 1, 1, 0, 0],
+        switches=[0, 0, 1, 1, 1, 0, 0],
         groups=[
             [1, 4, 6],
             [3, 4, 7],
@@ -27,7 +27,7 @@ TEST_CASES = [
     ),
     Case(
         name='base2',
-        lamps=[0, 0, 1, 1, 0, 0, 1, 1],
+        switches=[0, 0, 1, 1, 0, 0, 1, 1],
         groups=[
             [1, 3, 8],
             [1, 2, 5, 6, 7],
@@ -40,7 +40,7 @@ TEST_CASES = [
     ),
     Case(
         name='base3',
-        lamps=[1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0],
+        switches=[1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0],
         groups=[
             [2, 3],
             [5, 6],
@@ -52,7 +52,7 @@ TEST_CASES = [
     ),
     Case(
         name='base4',
-        lamps=[0, 1, 0],
+        switches=[0, 1, 0],
         groups=[
             [1, 2],
             [2, 3],
@@ -62,7 +62,7 @@ TEST_CASES = [
     ),
     Case(
         name='base5',
-        lamps=[1, 0, 0],
+        switches=[1, 0, 0],
         groups=[
             [1, 2],
             [2, 3],
@@ -72,7 +72,7 @@ TEST_CASES = [
     ),
     Case(
         name='base6',
-        lamps=[0, 0, 0, 1, 1],
+        switches=[0, 0, 0, 1, 1],
         groups=[
             [1, 2, 3],
             [4],
@@ -85,5 +85,5 @@ TEST_CASES = [
 
 @pytest.mark.parametrize('case', TEST_CASES, ids=str)
 def test_task4(case: Case) -> None:
-    answer = task4(lamps=case.lamps, groups=case.groups)
+    answer = task4(switches=case.switches, groups=case.groups)
     assert answer == case.answers
