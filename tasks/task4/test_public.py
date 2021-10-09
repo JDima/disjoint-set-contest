@@ -70,6 +70,16 @@ TEST_CASES = [
         ],
         answers=[0, 1, 1]
     ),
+    Case(
+        name='base6',
+        lamps=[0, 0, 0, 1, 1],
+        groups=[
+            [1, 2, 3],
+            [4],
+            [3, 4, 5]
+        ],
+        answers=[1, 1, 1, 1, 1]
+    )
 ]
 
 
